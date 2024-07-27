@@ -327,6 +327,12 @@ jobs:
       run: |
            cd _build
            cmake --build . --config ${{ matrix.build_configuration }}
+           
+    - name: Create artifacts
+      uses: actions/upload-artifact@v4
+      with:
+          name: Notepad++.exe
+          path: PowerEditor\src\_build\Release\notepad++.exe       
 
   build_windows_msys2:
 
